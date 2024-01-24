@@ -6,9 +6,9 @@
     "type": "module",
     "dependencies": {
         "@tanstack/react-router": "^1.9.0",
-        "embla-carousel": "8.0.0-rc19",
-        "embla-carousel-autoplay": "8.0.0-rc19",
-        "embla-carousel-react": "8.0.0-rc19",
+        "embla-carousel": "8.0.0-rc20",
+        "embla-carousel-autoplay": "8.0.0-rc20",
+        "embla-carousel-react": "8.0.0-rc20",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-transition-group": "^4.4.5"
