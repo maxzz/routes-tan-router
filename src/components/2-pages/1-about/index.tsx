@@ -1,5 +1,5 @@
 import { CatouselOptions, Carousel } from "@/ui/carousel";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { allImages } from "./images/imageByIndex";
 
 export function About() {

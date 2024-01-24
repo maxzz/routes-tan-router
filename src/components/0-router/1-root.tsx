@@ -1,10 +1,10 @@
-import { useLocation, useOutlet } from "react-router-dom";
+import { Outlet, RootRoute } from "@tanstack/react-router";
 import { SwitchTransition, CSSTransition, TransitionStatus } from "react-transition-group";
 import { Header } from "../1-header";
 import { RouteType } from "./0-all-routes";
-import "./transitions-page.css";
 import { Footer } from "../3-footer";
-
+import "./transitions-page.css";               
+/*
 function AnimatedOutlet({ routes }: { routes: RouteType[]; }) {
     const currentOutlet = useOutlet();
     const location = useLocation();
@@ -57,10 +57,24 @@ export function Root({ routes }: { routes: RouteType[]; }) {
                 <Header />
                 <div className="relative">
                     <AnimatedOutlet routes={routes} />
-                    {/* <Outlet /> */}
+                    {/* <Outlet /> * /}
                 </div>
                 <Footer />
             </div>
         </div>
     );
 }
+*/
+export const rootRoute = new RootRoute({
+    component: () => (
+        <div className="h-screen bg-sky-800">
+            <div className="w-full h-full grid grid-rows-[auto,1fr]">
+                <Header />
+                <div className="relative">
+                    <Outlet />
+                </div>
+                <Footer />
+            </div>
+        </div>
+    ),
+});

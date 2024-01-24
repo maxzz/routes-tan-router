@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
+import { Link } from "@tanstack/react-router";
 import { classNames } from '@/utils/classnames';
-import { Link, useLocation } from 'react-router-dom';
 import { IconRoutes } from '@/ui/icons';
 
 const linkClasses = (active: boolean) => classNames(
@@ -9,7 +9,6 @@ const linkClasses = (active: boolean) => classNames(
 );
 
 export function Header({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
-    const loc = useLocation();
     return (
         <div className={classNames("px-4 font-semibold text-sky-500 bg-sky-900 border-sky-600 border-b shadow flex items-center justify-between", className)} {...rest}>
             <Link to="/" className="tracking-wide text-sky-400 flex items-center">
@@ -18,9 +17,33 @@ export function Header({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
             </Link>
 
             <div className="flex items-center">
-                <Link to="/about" className={classNames(linkClasses(loc.pathname === "/about"))}>About</Link>
-                <Link to="/books" className={classNames(linkClasses(loc.pathname === "/books"))}>Books</Link>
-                <Link to="/contact" className={classNames(linkClasses(loc.pathname === "/contact"))}>Contact</Link>
+                <Link
+                    to="/about"
+                    className={classNames(linkClasses(false))}
+                    activeProps={{
+                        className: classNames(linkClasses(true))
+                    }}
+                >
+                    About
+                </Link>
+                <Link
+                    to="/books"
+                    className={classNames(linkClasses(false))}
+                    activeProps={{
+                        className: classNames(linkClasses(true))
+                    }}
+                >
+                    Books
+                </Link>
+                <Link
+                    to="/contact"
+                    className={classNames(linkClasses(false))}
+                    activeProps={{
+                        className: classNames(linkClasses(true))
+                    }}
+                >
+                    Contacts
+                </Link>
             </div>
         </div >
     );
