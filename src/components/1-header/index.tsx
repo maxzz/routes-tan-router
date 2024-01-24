@@ -3,10 +3,19 @@ import { Link } from "@tanstack/react-router";
 import { classNames } from '@/utils/classnames';
 import { IconRoutes } from '@/ui/icons';
 
-const linkClasses = (active: boolean) => classNames(
-    "px-3 py-2 pb-3 tracking-wide hover:text-sky-100 hover:bg-sky-700 transition-colors duration-200 ease-in-out",
-    active ? "text-sky-50" : "text-sky-600"
-);
+// const linkClasses = (active: boolean) => classNames(
+//     "px-3 py-2 pb-3 tracking-wide hover:text-sky-100 hover:bg-sky-700 transition-colors duration-200 ease-in-out",
+//     active ? "text-sky-50" : "text-sky-600"
+// );
+
+const linkClasses = (active: boolean) => {
+    console.log("linkClasses", active);
+    
+    return classNames(
+        "px-3 py-2 pb-3 tracking-wide hover:text-sky-100 hover:bg-sky-700 transition-colors duration-200 ease-in-out",
+        active ? "text-sky-50" : "text-sky-600"
+    )
+};
 
 export function Header({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
     return (
@@ -17,6 +26,7 @@ export function Header({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
             </Link>
 
             <div className="flex items-center">
+                {console.log("Header")!}
                 <Link
                     to="/about"
                     className={classNames(linkClasses(false))}
