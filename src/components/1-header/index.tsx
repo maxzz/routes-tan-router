@@ -12,6 +12,11 @@ const linkClasses = (active: boolean) => {
     };
 };
 
+const linkProps = {
+    inactiveProps: linkClasses(false),
+    activeProps: linkClasses(true),
+}
+
 export function Header({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
     return (
         <div className={classNames("px-4 font-semibold text-sky-500 bg-sky-900 border-sky-600 border-b shadow flex items-center justify-between", className)} {...rest}>
@@ -21,13 +26,13 @@ export function Header({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
             </Link>
 
             <div className="flex items-center">
-                <Link to="/about" inactiveProps={linkClasses(false)} activeProps={linkClasses(true)}>
+                <Link to="/about" {...linkProps}>
                     About
                 </Link>
-                <Link to="/books" inactiveProps={linkClasses(false)} activeProps={linkClasses(true)}>
+                <Link to="/books" {...linkProps}>
                     Books
                 </Link>
-                <Link to="/contact" inactiveProps={linkClasses(false)} activeProps={linkClasses(true)}>
+                <Link to="/contact" {...linkProps}>
                     Contacts
                 </Link>
             </div>
