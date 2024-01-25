@@ -1,9 +1,10 @@
 import { Outlet, RootRoute } from "@tanstack/react-router";
-import { SwitchTransition, CSSTransition, TransitionStatus } from "react-transition-group";
+// import { SwitchTransition, CSSTransition, TransitionStatus } from "react-transition-group";
+// import { RouteType } from "./0-all-routes";
 import { Header } from "../1-header";
-import { RouteType } from "./0-all-routes";
 import { Footer } from "../3-footer";
-import "./transitions-page.css";               
+// import "./transitions-page.css";               
+
 /*
 function AnimatedOutlet({ routes }: { routes: RouteType[]; }) {
     const currentOutlet = useOutlet();

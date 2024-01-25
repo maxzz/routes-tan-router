@@ -1,4 +1,4 @@
-import { routes } from "./0-all-routes";
+// import { routes } from "./0-all-routes";
 import { rootRoute } from "./1-root";
 import { ErrorPage } from "./3-error-page-404";
 import { HomePage } from "./2-home";
