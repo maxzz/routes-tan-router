@@ -29,7 +29,9 @@ export function Header({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
                 {console.log("Header")!}
                 <Link
                     to="/about"
-                    className={classNames(linkClasses(false))}
+                    inactiveProps={{
+                        className: classNames(linkClasses(false))
+                    }}
                     activeProps={{
                         className: classNames(linkClasses(true))
                     }}
@@ -38,7 +40,9 @@ export function Header({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
                 </Link>
                 <Link
                     to="/books"
-                    className={classNames(linkClasses(false))}
+                    inactiveProps={{
+                        className: classNames(linkClasses(false))
+                    }}
                     activeProps={{
                         className: classNames(linkClasses(true))
                     }}
@@ -47,7 +51,9 @@ export function Header({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
                 </Link>
                 <Link
                     to="/contact"
-                    className={classNames(linkClasses(false))}
+                    inactiveProps={{
+                        className: classNames(linkClasses(false))
+                    }}
                     activeProps={{
                         className: classNames(linkClasses(true))
                     }}
